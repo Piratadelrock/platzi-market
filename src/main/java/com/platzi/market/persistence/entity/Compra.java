@@ -1,10 +1,13 @@
 package com.platzi.market.persistence.entity;
 
 
+import ch.qos.logback.core.net.server.Client;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -26,5 +29,13 @@ public class Compra {
 
     private Integer comentario;
     private Integer estado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private Cliente cliente;
+
+    @OneToMany(mappedBy="compra")
+    private List<ComprasProducto> productos;
+
 
 }
