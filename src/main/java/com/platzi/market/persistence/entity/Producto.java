@@ -10,7 +10,7 @@ public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_producto")
-    private Long idProducto;
+    private int idProducto;
 
     private String nombre;
 
@@ -32,11 +32,11 @@ public class Producto {
     @JoinColumn(name = "id_categoria", insertable = false, updatable=false)
     private Categoria categoria;
 
-    public Long getIdProducto() {
+    public int getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(Long idProducto) {
+    public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
 

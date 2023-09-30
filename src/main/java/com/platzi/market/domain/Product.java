@@ -9,6 +9,7 @@ public class Product {
     private boolean active;
     private Category category;
 
+    // no se incluye codigoBarras a proposito
     public int getProductId() {
         return productId;
     }
