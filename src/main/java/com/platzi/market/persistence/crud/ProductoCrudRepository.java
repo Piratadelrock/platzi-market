@@ -19,7 +19,7 @@ public interface ProductoCrudRepository extends CrudRepository<Producto, Integer
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int cantidadStock, boolean estado);
 
     Optional<List<Producto>> findByPrecioVentaLessThanAndIdCategoriaOrderByNombreAsc(double precioVenta, int idCategoria);
-    Optional<List<Producto>> findByCodigoBarrasAscAndEstado(String codigoBarras, boolean estado);
+//    Optional<List<Producto>> findByCodigoBarrasAscAndEstado(String codigoBarras, boolean estado);
     Optional<List<Producto>> findByPrecioVentaGreaterThanEqualAndCantidadStockLessThanOrderByNombre(double precioVenta, int cantidadStock);
 
     Optional<List<Producto>> findByNombreAndPrecioVentaGreaterThanAndEstado(String nombre,double precioVenta,boolean estado);

@@ -1,7 +1,6 @@
 package com.platzi.market.persistence.entity;
 
-
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "productos")
@@ -74,6 +73,14 @@ public class Producto {
 
     public Integer getCantidadStock() {
         return cantidadStock;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public void setCantidadStock(Integer cantidadStock) {

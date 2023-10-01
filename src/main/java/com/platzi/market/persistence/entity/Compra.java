@@ -1,15 +1,13 @@
 package com.platzi.market.persistence.entity;
 
-
-import ch.qos.logback.core.net.server.Client;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter
-@Setter
+
+@Data
 @Entity
 @Table(name ="compras")
 public class Compra {
