@@ -7,6 +7,7 @@ import com.platzi.market.persistence.entity.Producto;
 import com.platzi.market.persistence.mapper.ProductMapper;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +32,8 @@ public class ProductoRepository implements ProductRepository{
 
     @Override
     public Optional<List<Product>> getScarseProducts(int quantity) {
-        return Optional.empty();
+        Optional<List<Producto>> productos = productoCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true);
+        return productos.map(prods->mapper.toProducts(prods));
     }
 
     @Override
@@ -41,6 +43,7 @@ public class ProductoRepository implements ProductRepository{
 
     @Override
     public Product save(Product product) {
+        //convierte al reves de product a producto
         Producto producto = mapper.toProducto(product);
         return mapper.toProduct(productoCrudRepository.save(producto));
     }
